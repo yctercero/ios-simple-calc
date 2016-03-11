@@ -12,6 +12,8 @@
 		FE861D821C91F6C900C68A5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE861D801C91F6C900C68A5C /* Main.storyboard */; };
 		FE861D841C91F6C900C68A5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE861D831C91F6C900C68A5C /* Assets.xcassets */; };
 		FE861D871C91F6C900C68A5C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE861D851C91F6C900C68A5C /* LaunchScreen.storyboard */; };
+		FE861D8F1C91FBD000C68A5C /* DS-DIGIT.TTF in Resources */ = {isa = PBXBuildFile; fileRef = FE861D8E1C91FBD000C68A5C /* DS-DIGIT.TTF */; };
+		FE861D911C91FFA700C68A5C /* btn 2.wav in Resources */ = {isa = PBXBuildFile; fileRef = FE861D901C91FFA700C68A5C /* btn 2.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		FE861D831C91F6C900C68A5C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FE861D861C91F6C900C68A5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FE861D881C91F6C900C68A5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FE861D8E1C91FBD000C68A5C /* DS-DIGIT.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DS-DIGIT.TTF"; sourceTree = "<group>"; };
+		FE861D901C91FFA700C68A5C /* btn 2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "btn 2.wav"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,8 @@
 		FE861D7B1C91F6C900C68A5C /* calc */ = {
 			isa = PBXGroup;
 			children = (
+				FE861D8E1C91FBD000C68A5C /* DS-DIGIT.TTF */,
+				FE861D901C91FFA700C68A5C /* btn 2.wav */,
 				FE861D7C1C91F6C900C68A5C /* AppDelegate.swift */,
 				FE861D7E1C91F6C900C68A5C /* ViewController.swift */,
 				FE861D801C91F6C900C68A5C /* Main.storyboard */,
@@ -123,8 +129,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE861D871C91F6C900C68A5C /* LaunchScreen.storyboard in Resources */,
+				FE861D8F1C91FBD000C68A5C /* DS-DIGIT.TTF in Resources */,
 				FE861D841C91F6C900C68A5C /* Assets.xcassets in Resources */,
 				FE861D821C91F6C900C68A5C /* Main.storyboard in Resources */,
+				FE861D911C91FFA700C68A5C /* btn 2.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
