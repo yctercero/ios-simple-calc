@@ -35,12 +35,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let path = NSBundle.mainBundle().pathForResource("btn 2", ofType: "wav")
+        let path = Bundle.main.path(forResource: "btn 2", ofType: "wav")
         
-        let soundURL = NSURL(fileURLWithPath: path!)
+        let soundURL = URL(fileURLWithPath: path!)
         
         do {
-          try btnSound = AVAudioPlayer(contentsOfURL: soundURL)
+          try btnSound = AVAudioPlayer(contentsOf: soundURL)
             btnSound.prepareToPlay()
         } catch let err as NSError {
             print(err.debugDescription)
@@ -49,7 +49,7 @@ class ViewController: UIViewController {
         
     }
 
-    @IBAction func numberPressed(btn: UIButton!) {
+    @IBAction func numberPressed(_ btn: UIButton!) {
         playSound()
         
         runningNumber += "\(btn.tag)"
@@ -57,42 +57,42 @@ class ViewController: UIViewController {
         outputLabel.text = runningNumber
     }
     
-    @IBAction func onDividePressed(sender: AnyObject) {
+    @IBAction func onDividePressed(_ sender: AnyObject) {
         processOperation(Operation.Divide)
     }
     
-    @IBAction func onMultiplyPressed(sender: AnyObject) {
+    @IBAction func onMultiplyPressed(_ sender: AnyObject) {
         processOperation(Operation.Multiply)
     }
     
-    @IBAction func onSubtractPressed(sender: AnyObject) {
+    @IBAction func onSubtractPressed(_ sender: AnyObject) {
         processOperation(Operation.Subtraction)
     }
     
-    @IBAction func onAdditionPressed(sender: AnyObject) {
+    @IBAction func onAdditionPressed(_ sender: AnyObject) {
         processOperation(Operation.Addition)
     }
     
-    @IBAction func onEqualPressed(sender: AnyObject) {
+    @IBAction func onEqualPressed(_ sender: AnyObject) {
         processOperation(currentOperation)
     }
     
-    @IBAction func onClearPressed(sender: AnyObject) {
+    @IBAction func onClearPressed(_ sender: AnyObject) {
         processUncommonButtons(Operation.Clear)
     }
     
-    @IBAction func onPosNegPressed(sender: AnyObject) {
+    @IBAction func onPosNegPressed(_ sender: AnyObject) {
         processUncommonButtons(Operation.PosNeg)
     }
     
-    @IBAction func onDotPressed(sender: AnyObject) {
+    @IBAction func onDotPressed(_ sender: AnyObject) {
         processUncommonButtons(Operation.Dot)
     }
     
     @IBOutlet var clearOutlet: UIButton!
     
     
-    func processUncommonButtons(op: Operation) {
+    func processUncommonButtons(_ op: Operation) {
         playSound()
         
         if op == Operation.Clear {
@@ -101,7 +101,7 @@ class ViewController: UIViewController {
                 
                 runningNumber = ""
                 
-                clearOutlet.setTitle("AC", forState: .Normal)
+                clearOutlet.setTitle("AC", for: UIControlState())
             } else if clearOutlet.currentTitle == "AC" {
                 outputLabel.text = ""
                 
@@ -115,13 +115,13 @@ class ViewController: UIViewController {
                 
                 currentOperation = Operation.Empty
                 
-                clearOutlet.setTitle("C", forState: .Normal)
+                clearOutlet.setTitle("C", for: UIControlState())
             }
         } else if op == Operation.PosNeg {
             let searchCharachter: Character = "-"
             if runningNumber.characters.contains(searchCharachter) {
                 
-                 runningNumber.removeAtIndex(runningNumber.startIndex)
+                 runningNumber.remove(at: runningNumber.startIndex)
                 
                 outputLabel.text = runningNumber
                 
@@ -149,7 +149,7 @@ class ViewController: UIViewController {
         }
     }
     
-    func processOperation(op: Operation) {
+    func processOperation(_ op: Operation) {
         playSound()
         
         if currentOperation != Operation.Empty {
@@ -190,7 +190,7 @@ class ViewController: UIViewController {
     }
     
     func playSound() {
-        if btnSound.playing {
+        if btnSound.isPlaying {
             btnSound.stop()
         }
         
